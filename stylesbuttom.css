@@ -1,0 +1,62 @@
+.boton {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 10px; /* Ajusta la distancia desde la parte superior según tu preferencia */
+    right: 25px; /* Ajusta la distancia desde la derecha según tu preferencia */
+    z-index: 1; /* Asegura que el botón esté por encima del contenido */
+
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-label {
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    position: relative;
+    border-radius: 30px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s; /* Agregamos transición para background-color, box-shadow y transform */
+    background-color: #ff8800; /* Color de fondo del botón en modo claro */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombrado por defecto en modo claro */
+}
+
+.toggle-label::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-image: url('https://i.pinimg.com/originals/0d/e3/f6/0de3f6b0d942a693b001d3ffb7753872.png'); /* Imagen en modo claro */
+    background-size: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: transform 0.3s, background-image 0.3s;
+}
+
+.toggle-checkbox:checked + .toggle-label {
+    background-color: #000000; /* Color de fondo del botón en modo oscuro */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombrado por defecto en modo oscuro */
+}
+
+/* Cambios de sombra y tamaño en hover */
+.toggle-label:hover {
+    box-shadow: 0 6px 10px rgb(229, 133, 29); /* Cambio de sombra en hover en modo claro */
+    transform: scale(1.1); /* Cambio de tamaño en hover */
+}
+
+.toggle-checkbox:checked + .toggle-label:hover {
+    box-shadow: 0 6px 10px rgb(14, 28, 71); /* Cambio de sombra en hover en modo oscuro */
+    transform: scale(1.1); /* Cambio de tamaño en hover */
+}
+
+.toggle-checkbox:checked + .toggle-label::before {
+    background-image: url('https://w0.peakpx.com/wallpaper/769/994/HD-wallpaper-jiji-anime-studio-ghibli-hayao-miyazaki-jiji-kikis-kikis-delivery-service.jpg'); /* Imagen en modo oscuro */
+    transform: translateX(50px); /* Desplazar el círculo al modo oscuro */
+}
+
