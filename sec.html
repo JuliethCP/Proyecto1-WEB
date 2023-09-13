@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Susuwatari</title>
+    <link rel="icon" type="image/x-icon" href="imgs/susuwatari.png" sizes="96x96">
+    <style>
+        /* Estilo inicial de la imagen */
+        body{
+            background: url(imgs/fondito.jpg);
+            background-color: #2d581d;
+            position: relative;
+        }
+        .imagen-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+        }
+
+        .imagen {
+            width: 100%;
+            height: 100%;
+        }
+        /* Estilo para el enlace */
+        .imagen-container a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="imagen-container">
+        <a href="index.html" target="_self">
+            <img class="imagen" src="imgs/susuwatari.png" alt="Imagen Movible">
+        </a>
+    </div>
+    <script>
+        const imagen = document.querySelector('.imagen');
+        let isHovered = false;
+
+        imagen.addEventListener('mouseenter', () => {
+            if (!isHovered) {
+                isHovered = true;
+                moveImage();
+            }
+        });
+
+        function moveImage() {
+            if (isHovered) {
+                // Generar una posición de desplazamiento aleatoria
+                const randomX = Math.random() * 500 - 50; // Valores entre -50 y 50
+                const randomY = Math.random() * 500 - 50; // Valores entre -50 y 50
+
+                imagen.style.transform = `translate(${randomX}px, ${randomY}px)`;
+
+                // Repetir la animación después de un tiempo
+                setTimeout(moveImage, 500);
+            }
+        }
+    </script>
+</body>
+</html>
