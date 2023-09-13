@@ -8,9 +8,10 @@
     <style>
         /* Estilo inicial de la imagen */
         body{
-            background: url(imgs/fondito.jpg);
+            background: url("imgs/fondito.jpg");
             background-color: #2d581d;
             position: relative;
+            
         }
         .imagen-container {
             position: relative;
@@ -51,8 +52,8 @@
         function moveImage() {
             if (isHovered) {
                 // Generar una posición de desplazamiento aleatoria
-                const randomX = Math.random() * 500 - 50; // Valores entre -50 y 50
-                const randomY = Math.random() * 500 - 50; // Valores entre -50 y 50
+                const randomX = Math.random() * 500 - 50; 
+                const randomY = Math.random() * 500 - 50; 
 
                 imagen.style.transform = `translate(${randomX}px, ${randomY}px)`;
 
