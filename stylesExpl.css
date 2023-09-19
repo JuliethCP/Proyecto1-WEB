@@ -2,21 +2,31 @@ body{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: #91a5d2; /* Fondo por defecto en modo claro */
     transition: background-color 0.3s;
-    overflow: hidden;
+    overflow: scroll;
 }
 
-header{
-    text-align: left;
-    text-justify: auto;
+header {
+    text-align: center;
     width: 100%;
-    height: 50px;
-    margin: auto;
-    margin-top: -20px;
-    margin-left: -20px;
-    padding: 20px;
-    border-spacing: 5px;
-
+    height: 60px; /* Aumenta la altura para dar más espacio al contenido del encabezado */
+    padding: 10px 0; /* Añade espacio vertical en el interior del encabezado */
+    background-color: aliceblue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1; /* Asegura que el encabezado esté por encima del contenido */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
+
+h1{
+    font-size: 30px;
+    text-align: center;
+    color: #000000;
+    margin-top: 15px;
+    margin-bottom: auto;
+}
+
 
 .botn {
     text-align: center;
@@ -34,6 +44,7 @@ header{
     cursor: pointer; /* Cambia el cursor al puntero al pasar por encima */
     font-weight: bold; /* Añade negrita al texto */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+    z-index: 100;
 }
 
 .botn:hover {
@@ -49,41 +60,41 @@ header{
     text-decoration: none;
     color: #ffffff;
 }
-
-h1{
-    font-size: 30px;
-    text-align: center;
-    color: #ffffff;
-    margin-top: -25px;
-    margin-bottom: 10px;
+.text-container{
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
 
-
-a:link {
-    text-decoration: none;
-    color: #ffffff;
+/* Estilos CSS para el cuadro de texto */
+#codigo {
+    width: 40%;
+    height: 70%;
+    padding: 10px;
+    margin-top: -20%;
+    font-family: "Courier New", monospace;
+    text-align: left;
+    font-size: 16px;
+    background-color: #201c1c;
+    color: white;
+    border: 1px solid #ccc;
+    resize: none; 
+    overflow: auto; 
+    border-radius: 5px;
+    margin-left: 50%;
 }
 
-#totn {
-    width: 100%; 
-    height: 100%; 
-    margin-left: -8px;
-    margin-top: -8px;
-    overflow: hidden;
-    position: fixed;
-    z-index: -1;
-}
-
-
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px; /* Espacio entre las tarjetas */
-    justify-items: center;
-}
+/* ////////////////////////////////////////////////////////////*/
 
 /* Estilos CSS para las tarjetas */
 .card {
+    margin-left: 20%;
+    margin-top: 10%;
     width: 200px;
     height: 300px;
     overflow: hidden;

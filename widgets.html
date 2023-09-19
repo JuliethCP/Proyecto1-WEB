@@ -4,9 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Widgets</title>
+    <link rel="stylesheet" href="stylesExpl.css">
+    <link rel="icon" type="image/x-icon" href="imgs/icon.png" sizes="96x96">
 </head>
 <body>
-    <a href="index.html" target="_self">
-        <button> Main</button>
+    <div class="botn">
+        <a href="index.html" target="_self">
+                Main </a>
+    </div>
+
+        <header>
+            <h1>Studio Ghibli</h1>
+        </header>
+
+        <div class="card-container">
+            <div class="card card-1" onclick="playVideo(this)">
+                <img src="imgs/chihiro.jpg" alt="El viaje de Chihiro">
+                <div class="card-info">
+                    <h3>El viaje de Chihiro</h3>
+                    <p>2h 5min - 2001 - Max</p>
+                </div>
+                <div class="video-overlay">
+                    <video width="320" height="240" controls>
+                        <source src="videos/EL-VIAJE-DE-CHIHIRO-Tráiler-Español_HD.mp4" type="video/mp4">
+                    </video>
+            </div>
+            </div>
+        </div>
+        <div class="text-container">
+                <p>El código HTML de la página es el siguiente:</p>
+        </div>
+
+        <textarea id="codigo" rows="10" cols="50" readonly>
+            // Este contenido no es editable
+            function saludar() {
+              console.log("¡Hola, mundo!");
+            }
+          </textarea>
+        <textarea id="codigo" rows="30" cols="50" readonly>
+            .botn {
+                text-align: center;
+                padding: 10px 20px; /* Aumenta el espacio de relleno para hacer clic más grande */
+                height: auto; /* Elimina la altura fija para que el botón se ajuste al contenido */
+                width: auto; /* Elimina el ancho fijo para que el botón se ajuste al contenido */
+                border-radius: 5px;
+                color: white;
+                margin-left: 20px;
+                margin-top: 5px;
+                background-color: #2787b8; /* Cambia el color de fondo predeterminado */
+                text-decoration: none; /* Quita la decoración de texto para el enlace */
+                transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+                display: inline-block; /* Hace que el botón se ajuste automáticamente al contenido */
+                cursor: pointer; /* Cambia el cursor al puntero al pasar por encima */
+                font-weight: bold; /* Añade negrita al texto */
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            }
+            
+            .botn:hover {
+                background-color: #026ca0; 
+                box-shadow: 0 9px 12px rgba(0, 0, 0, 0.5);
+                transform: scale(1.1);
+            }
+            .botn:link {
+                text-decoration: none;
+                color: #ffffff;
+            }
+        </textarea>
+          
+<script>
+function playVideo(card) {
+    const videoOverlay = card.querySelector('.video-overlay');
+    videoOverlay.style.display = 'block';
+    card.classList.add('flipped'); // Agrega la clase 'flipped'
+}
+</script>
 </body>
 </html>
