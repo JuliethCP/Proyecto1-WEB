@@ -11,114 +11,177 @@
 <body>
     <div>
         <header>
-            <h1>Studio Ghibli</h1>
+            <a href="widgets.html" target="_self">
+                <button> <span> Widgets</span></button>
+            </a>
+          
+            
+            <a href="sec.html" target="_self"><h1>Studio Ghibli</h1> </a>
            
             <div class="boton">
                 <input type="checkbox" id="modoToggle" class="toggle-checkbox">
                 <label for="modoToggle" class="toggle-label"></label>
             </div>
+
         </header>
         <img id="totn" src="imgs/totoro-day.jpg" alt="Studio Ghibli">
 
     
        <!-- Películas de Studio Ghibli -->
        <div class="card-container">
-        <div class="card">
-            <a href="sec.html" target="_self"></a>
+        <div class="card card-1" onclick="playVideo(this)">
             <img src="imgs/chihiro.jpg" alt="El viaje de Chihiro">
-            
             <div class="card-info">
                 <h3>El viaje de Chihiro</h3>
                 <p>2h 5min - 2001 - Max</p>
             </div>
+            <div class="video-overlay">
+                <video width="320" height="240" controls>
+                    <source src="videos/EL VIAJE DE CHIHIRO - Tráiler Español _ HD.mp4" type="video/mp4">
+                </video>
         </div>
-
-        <div class="card">
-            <a href="sec.html" target="_self"></a>
+        </div>
+        <div class="card card-2" onclick="playVideo(this)">
             <img src="imgs/kiki.jpg" alt="Kiki: entregas a domicilio">
             <div class="card-info">
                 <h3>Kiki: entregas a domicilio</h3>
                 <p>1h 42min - 1989 - Max</p>
             </div>
+            <div class="video-overlay">
+                <video width="320" height="240" controls>
+                    <source src="videos/Kiki's Delivery Service - Official Trailer.mp4" type="video/mp4">
+                </video>
+               
+            </div>
         </div>
-        <div class="card">
-            <a href="sec.html" target="_self"></a>
+        <div class="card card-3" onclick="playVideo(this)">
             <img src="imgs/castillo.jpg" alt="El increíble castillo vagabundo">
             <div class="card-info">
                 <h3>El increíble castillo vagabundo</h3>
                 <p>1h 59min - 2004 - Max</p>
             </div>
+            <div class="video-overlay">
+                <video width="320" height="240" controls>
+                    <source src="videos/El increíble castillo Vagabundo [Trailer].mp4" type="video/mp4">
+                </video>
+               
+            </div>
         </div>
-        <div class="card">
-            <a href="sec.html" target="_self"></a>
+        <div class="card card-4" onclick="playVideo(this)">
             <img src="imgs/mononoke.jpg" alt="La princesa Mononoke">
             <div class="card-info">
                 <h3>La princesa Mononoke</h3>
                 <p>2h 13min - 1997 - Max</p>
             </div>
+            <div class="video-overlay">
+                <video width="320" height="240" controls>
+                    <source src="videos/La Princesa Mononoke - Trailer Oficial (Chile).mp4" type="video/mp4">
+                </video>
+               
+            </div>
         </div>
-        <div class="card">
-            <a href="sec.html" target="_self"></a>
+        <div class="card card-5" onclick="playVideo(this)">
             <img src="imgs/ponyo.jpg" alt="Ponyo y el secreto de la sirenita">
             <div class="card-info">
                 <h3>Ponyo y el secreto de la sirenita</h3>
                 <p>1h 43min - 2008 - Max</p>
             </div>
+            <div class="video-overlay">
+                <video width="320" height="240" controls>
+                    <source src="videos/Ponyo y El Secreto de la Sirenita - Trailer Oficial - DOB (Chile).mp4" type="video/mp4">
+                </video>
+               
+            </div>
         </div>
-        <div class="card">
-            <a href="sec.html" target="_self"></a>
+        <div class="card card-6" onclick="playVideo(this)">
             <img src="imgs/totoro.jpg" alt="Mi vecino Totoro">
             <div class="card-info">
                 <h3>Mi vecino Totoro</h3>
                 <p>1h 26min - 1988 - Max</p>
             </div>
+            <div class="video-overlay">
+                <video width="320" height="240" controls>
+                    <source src="videos/MI VECINO TOTORO - Tráiler Español _ HD.mp4" type="video/mp4">
+                </video>
+               
+            </div>
         </div>
-        <div class="card">
-            <a href="sec.html" target="_self"></a>
-            <img src="imgs/tumba.jpg" alt="La tumbra de las luciérnagas">
+        <div class="card card-7" onclick="playVideo(this)">
+            <img src="imgs/tumba.jpg" alt="La tumba de las luciérnagas">
             <div class="card-info">
                 <h3>La tumbra de las luciérnagas</h3>
                 <p>1h 28min - 1988 - Vudu</p>
             </div>
+            <div class="video-overlay">
+                <video width="320" height="240" controls>
+                    <source src="videos/Grave of the Fireflies - Official Trailer.mp4" type="video/mp4">
+                </video>
+               
+            </div>
         </div>
-        <div class="card">
-            <a href="sec.html" target="_self"></a>
+        <div class="card card-8" onclick="playVideo(this)">
             <img src="imgs/porco.jpg" alt="Porco Rosso">
             <div class="card-info">
                 <h3>Porco Rosso</h3>
                 <p>1h 34min - 1992 - Max</p>
             </div>
+            <div class="video-overlay">
+                    <video width="320" height="240" controls>
+                        <source src="videos/Porco Rosso - Official Trailer.mp4" type="video/mp4">
+                    </video>
+                   
+            </div>
         </div>
-        <div class="card">
-            <a href="sec.html" target="_self"></a>
+        <div class="card card-9" onclick="playVideo(this)">
             <img src="imgs/arrietty.jpg" alt="Arrietty y el mundo de los diminutos">
             <div class="card-info">
                 <h3>Arrietty y el mundo de los diminutos</h3>
                 <p>1h 34min - 2010 - Max</p>
             </div>
+            <div class="video-overlay">
+                <video width="320" height="240" controls>
+                    <source src="videos/Arrietty - Official Trailer.mp4" type="video/mp4">
+                </video>
+               
+            </div>
         </div>
-        <div class="card">
-            <a href="sec.html" target="_self"></a>
+        <div class="card card-10" onclick="playVideo(this)">
             <img src="imgs/cuentos.jpg" alt="Cuentos de Terramar">
             <div class="card-info">
                 <h3>Cuentos de Terramar</h3>
                 <p>1h 55min - 2006 - Max</p>
             </div>
+            <div class="video-overlay">
+                <video width="320" height="240" controls>
+                    <source src="videos/Tales From Earthsea - Official Trailer.mp4" type="video/mp4">
+                </video>
+               
+            </div>
         </div>
-        <div class="card">
-            <a href="sec.html" target="_self"></a>
+        <div class="card card-11" onclick="playVideo(this)">
             <img src="imgs/viento.jpg" alt="El viento se levanta">
             <div class="card-info">
                 <h3>El viento se levanta</h3>
                 <p>2h 06min - 1984 - Max</p>
             </div>
+            <div class="video-overlay">
+                <video width="320" height="240" controls>
+                    <source src="videos/El viento se levanta - Trailer.mp4" type="video/mp4">
+                </video>
+               
+            </div>
         </div>
-        <div class="card">
-            <a href="sec.html" target="_self"></a>
+        <div class="card card-12" onclick="playVideo(this)">
             <img src="imgs/colina.jpg" alt="La colina de las amapolas">
             <div class="card-info">
                 <h3>La colina de las amapolas</h3>
                 <p>1h 31min - 2011 - Max</p>
+            </div>
+            <div class="video-overlay">
+                <video width="320" height="240" controls>
+                    <source src="videos/From Up On Poppy Hill - Official Trailer.mp4" type="video/mp4">
+                </video>
+               
             </div>
         </div>
     </div>
@@ -126,6 +189,7 @@
 </body>
 
 <script>
+
 const toggleCheckbox = document.querySelector('.toggle-checkbox');
 const body = document.body;
 const totn = document.getElementById('totn');
@@ -144,6 +208,13 @@ const header = document.querySelector('header h1'); // Selecciona el elemento h1
             header.style.color = 'white';
         }
     });
+
+function playVideo(card) {
+    const videoOverlay = card.querySelector('.video-overlay');
+    videoOverlay.style.display = 'block';
+    card.classList.add('flipped'); // Agrega la clase 'flipped'
+}
+
 </script>
 
 </html>

@@ -18,6 +18,29 @@ header{
 
 }
 
+button {
+    text-align: center;
+    text-justify: auto;
+    padding: 5px;
+    height: 40px;
+    width: 70px;
+    border-radius: 5px;
+    color: white;
+    background: url(https://i.imgur.com/9wkuX9o.png) no-repeat center center;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 10px; 
+    left: 25px; 
+    z-index: 1; /* Asegura que el botón esté por encima del contenido */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); 
+}
+
+/* Add hover effect */
+button:hover {
+    background-color: #026ca0; 
+    box-shadow: 0 9px 12px #047eb2 ; 
+    transform: scale(1.1); 
+}
 
 h1{
     font-size: 30px;
@@ -25,6 +48,12 @@ h1{
     color: #ffffff;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+
+a:link {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 #totn {
@@ -37,14 +66,7 @@ h1{
     z-index: -1;
 }
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-   
-}
 
-/* Estilos CSS para las tarjetas */
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -52,37 +74,20 @@ h1{
     justify-items: center;
 }
 
+/* Estilos CSS para las tarjetas */
 .card {
     width: 200px;
     height: 300px;
-    background-color: aqua;
     overflow: hidden;
     position: relative;
     border: 1px solid #ccc;
     border-radius: 5px;
-    transform-origin: center;
-    transition: transform 0.8s; /* Agregamos transición para el fondo */
+    transition: transform 0.2s;
+    cursor: pointer;
 }
 
-.card:last-child {
-    margin-right: 0; /* Elimina el margen derecho de la última tarjeta */
-}
-
-.card:hover {
-    transform: scale(1.05) rotate(90deg);
-    z-index: 100;
-    width: 100%;
-    height: 100%;
-    
-}
-.card a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Asegura que el enlace esté en la parte superior */
+.card:not(.flipped):hover {
+    transform: scale(1.05);
 }
 
 .card img {
@@ -91,6 +96,7 @@ h1{
     object-fit: cover;
 }
 
+/* Estilos CSS para la información adicional */
 .card-info {
     position: absolute;
     bottom: 0;
@@ -98,24 +104,46 @@ h1{
     right: 0;
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
+    padding: 10px;
     opacity: 0;
-    transition: opacity 0.8s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-.card-info h3,
-.card-info p {
-    transform: rotate(-90deg); /* Rotar el texto -90 grados */
-    transform-origin: center center;
-    text-align: center; /* Centrar el texto horizontalmente */
-    margin: 0;
-   
+    transition: opacity 0.2s;
 }
 
 .card:hover .card-info {
     opacity: 1;
+}
+
+
+/*/////////////////////////////////////////////////*/
+
+.card.flipped {
+    z-index: 100;
+    transform: scale(1.30) rotate(90deg);
+    
+}
+
+/* Estilos CSS para la capa de reproducción de video */
+.video-overlay {
+    position: absolute;
+    top: 30px;
+    left: -70px;
+    object-fit: cover;
+    width: 325px;
+    height: 238px;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-90deg);
+}
+
+.video-overlay video {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.video-overlay:hover {
+    display: block;
+    pointer-events: auto; /* Restablece la interacción con el botón de reproducción/pausa */
 }
