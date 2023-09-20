@@ -14,34 +14,34 @@
     </div>
 
         <header>
-            <h1>Studio Ghibli</h1>
+            <h1>Proyecto 1 WEB</h1>
         </header>
 
-        <div class="card-container">
-            <div class="card card-1" onclick="playVideo(this)">
-                <img src="imgs/chihiro.jpg" alt="El viaje de Chihiro">
-                <div class="card-info">
-                    <h3>El viaje de Chihiro</h3>
-                    <p>2h 5min - 2001 - Max</p>
-                </div>
-                <div class="video-overlay">
-                    <video width="320" height="240" controls>
-                        <source src="videos/EL-VIAJE-DE-CHIHIRO-Tráiler-Español_HD.mp4" type="video/mp4">
-                    </video>
-            </div>
-            </div>
-        </div>
         <div class="text-container">
-                <p>El código HTML de la página es el siguiente:</p>
+            <p>El código HTML de la página es el siguiente:</p>
+        </div>
+        <div class="card card-1" onclick="playVideo(this)">
+            <img src="imgs/chihiro.jpg" alt="El viaje de Chihiro">
+            <div class="card-info">
+                <h3>El viaje de Chihiro</h3>
+                <p>2h 5min - 2001 - Max</p>
+            </div>
+            <div class="video-overlay">
+                <video width="320" height="240" controls>
+                    <source src="videos/EL-VIAJE-DE-CHIHIRO-Tráiler-Español_HD.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
 
-        <textarea id="codigo" rows="10" cols="50" readonly>
+        <div class="codigo-container">
+
+        <textarea  rows="10" cols="59" readonly>
             // Este contenido no es editable
             function saludar() {
               console.log("¡Hola, mundo!");
             }
           </textarea>
-        <textarea id="codigo" rows="30" cols="50" readonly>
+        <textarea rows="30" cols="59" readonly>
             .botn {
                 text-align: center;
                 padding: 10px 20px; /* Aumenta el espacio de relleno para hacer clic más grande */
@@ -70,6 +70,23 @@
                 color: #ffffff;
             }
         </textarea>
+
+    </div>
+    <footer>
+        <p>© 2023 - 2023 | Todos los derechos reservados a Julieth Campos y Nicole Jara</p>
+        <h4> Información de contacto:</h4>
+        <p><span>Julieth Campos Pérez</span> </p>
+        <a href="mailto:juliethcp22@gmail.com?subject=Proyecto%1%WEB&bcc
+        =copia_oculta@gmail.com&cc=copia@gmail.com&body=correo%20de%20prueba">
+        <strong>Correo:</strong> juliethcp22@gmail.com</a>
+        <a href="tel: +50686036787" > <strong>  |  Teléfono:</strong>(506) 8603-6787</a> 
+        <br>
+        <p><span>Nicole Jara González</span> </p>
+        <a href="mailto:nicolejara09@gmail.com?subject=Proyecto%1%WEB&bcc
+        =copia_oculta@gmail.com&cc=copia@gmail.com&body=correo%20de%20prueba">
+        <strong>Correo:</strong> nicolejara09@gmail.com</a>
+        <a href="tel: +50684894736" > <strong>  |  Teléfono:</strong>(506) 84894736</a> 
+    </footer>
           
 <script>
 function playVideo(card) {

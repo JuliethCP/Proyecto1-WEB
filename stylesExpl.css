@@ -60,11 +60,14 @@ h1{
     text-decoration: none;
     color: #ffffff;
 }
+.botn:active {
+    text-decoration: none;
+    color: #ffffff;
+}
 .text-container{
-    margin-top: 10%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 10%;
+    margin-left: 50%;
+    margin-top: 5%;
+    width: 40%;
     background-color: #ffffff;
     border-radius: 5px;
     padding: 10px;
@@ -72,13 +75,10 @@ h1{
 }
 
 /* Estilos CSS para el cuadro de texto */
-#codigo {
-    width: 40%;
-    height: 70%;
+textarea {
     padding: 10px;
-    margin-top: -20%;
     font-family: "Courier New", monospace;
-    text-align: left;
+   
     font-size: 16px;
     background-color: #201c1c;
     color: white;
@@ -86,7 +86,16 @@ h1{
     resize: none; 
     overflow: auto; 
     border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+.codigo-container{
+    width: 200px;
     margin-left: 50%;
+    margin-top: -15%;
+    gap: 20px; 
+    justify-items: left;
+    
 }
 
 /* ////////////////////////////////////////////////////////////*/
@@ -94,7 +103,7 @@ h1{
 /* Estilos CSS para las tarjetas */
 .card {
     margin-left: 20%;
-    margin-top: 10%;
+    margin-top: 0%;
     width: 200px;
     height: 300px;
     overflow: hidden;
