@@ -17,64 +17,222 @@
             <h1>Proyecto 1 WEB</h1>
         </header>
 
+        <div class="card-container">
+            <div class="card card-1" onclick="playVideo(this)">
+                <img src="imgs/chihiro.jpg" alt="El viaje de Chihiro">
+                <div class="card-info">
+                    <h3>El viaje de Chihiro</h3>
+                    <p>2h 5min - 2001 - Max</p>
+                </div>
+                <div class="video-overlay">
+                    <video width="320" height="240" controls>
+                        <source src="videos/EL-VIAJE-DE-CHIHIRO-Tráiler-Español_HD.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="card card-2" onclick="playVideo(this)">
+                <img src="imgs/kiki.jpg" alt="Kiki: entregas a domicilio">
+                <div class="card-info">
+                    <h3>Kiki: entregas a domicilio</h3>
+                    <p>1h 42min - 1989 - Max</p>
+                </div>
+                <div class="video-overlay">
+                    <video width="320" height="240" controls>
+                        <source src="videos/Kiki's-Delivery-Service-Official-Trailer.mp4" type="video/mp4">
+                    </video>
+                   
+                </div>
+            </div>
+            <div class="card card-3" onclick="playVideo(this)">
+                <img src="imgs/castillo.jpg" alt="El increíble castillo vagabundo">
+                <div class="card-info">
+                    <h3>El increíble castillo vagabundo</h3>
+                    <p>1h 59min - 2004 - Max</p>
+                </div>
+                <div class="video-overlay">
+                    <video width="320" height="240" controls>
+                        <source src="videos/El-increíble-castillo-Vagabundo.mp4" type="video/mp4">
+                    </video>
+                   
+                </div>
+            </div>
+        </div>
+        
+        <div class="boton">
+            <input type="checkbox" id="modoToggle" class="toggle-checkbox">
+            <label for="modoToggle" class="toggle-label"></label>
+        </div>
+
+        <div class="cajas">
         <div class="text-container">
-            <p>El código HTML de la página es el siguiente:</p>
+            <p>El primer widget que se diseñó son cards, para la página en general se le quiso dar un formato de las películas de Studio Ghibli por lo que todo va a girar en torno a este tema. Cada card presenta el póster de una película, al poner el cursor sobre esta nos muestra información como el título, duración, año y plataforma en donde se encuentra disponible.  Además de esto, al hacer click la tarjeta se girará 90 grados y podremos ver el trailer de la película horizontalmente.
+                Una explicación más técnica sobre el funcionamiento de estas sería el siguiente:
+                Se crea un container para acomodar mejor las tarjetas entre sí, dentro de ellas se colocan los datos ya mencionados anteriormente.
+                </p>
         </div>
-       
+        
+        <!--------------------------------------------->
+        <textarea  rows="15" cols="59" readonly>
+        <div class="card-container">
         <div class="card card-1" onclick="playVideo(this)">
-            <img src="imgs/chihiro.jpg" alt="El viaje de Chihiro">
-            <div class="card-info">
-                <h3>El viaje de Chihiro</h3>
-                <p>2h 5min - 2001 - Max</p>
-            </div>
-            <div class="video-overlay">
-                <video width="320" height="240" controls>
-                    <source src="videos/EL-VIAJE-DE-CHIHIRO-Tráiler-Español_HD.mp4" type="video/mp4">
-                </video>
-            </div>
+        <img src="imgs/chihiro.jpg" alt="El viaje de Chihiro">
+        <div class="card-info">
+        <h3>El viaje de Chihiro</h3>
+        <p>2h 5min - 2001 - Max</p>
+        </div>
+        <div class="video-overlay">
+        <video width="320" height="240" controls>
+        <source src="videos/EL-VIAJE-DE-CHIHIRO-Tráiler-Español_HD.mp4" type="video/mp4">
+        </video>
+        </div>
+          </textarea>
+          <pre id="highlighting" aria-hidden="true">
+            <code class="language-html" id="highlighting-content"></code>
+          </pre>
+
+        <div class="text-container">
+            <p>En cuanto a los estilos de estas, se añadió varias configuraciones, algunas transiciones y animaciones, se trabajó con Javascript para poder girar la tarjeta correctamente al detectar un click, además se le añade un “flipped” a la clase de card, esto para poder configurar mejor el css de esta y el video que se reproducería en la misma.
+            </p>
         </div>
 
-        <div class="codigo-container">
-
-        <textarea  rows="10" cols="59" readonly>
-            // Este contenido no es editable
-            function saludar() {
-              console.log("¡Hola, mundo!");
-            }
-          </textarea>
         <textarea rows="30" cols="59" readonly>
-            .botn {
-                text-align: center;
-                padding: 10px 20px; /* Aumenta el espacio de relleno para hacer clic más grande */
-                height: auto; /* Elimina la altura fija para que el botón se ajuste al contenido */
-                width: auto; /* Elimina el ancho fijo para que el botón se ajuste al contenido */
-                border-radius: 5px;
-                color: white;
-                margin-left: 20px;
-                margin-top: 5px;
-                background-color: #2787b8; /* Cambia el color de fondo predeterminado */
-                text-decoration: none; /* Quita la decoración de texto para el enlace */
-                transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-                display: inline-block; /* Hace que el botón se ajuste automáticamente al contenido */
-                cursor: pointer; /* Cambia el cursor al puntero al pasar por encima */
-                font-weight: bold; /* Añade negrita al texto */
-                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-            }
-            
-            .botn:hover {
-                background-color: #026ca0; 
-                box-shadow: 0 9px 12px rgba(0, 0, 0, 0.5);
-                transform: scale(1.1);
-            }
-            .botn:link {
-                text-decoration: none;
-                color: #ffffff;
-            }
+        .card {
+            width: 200px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+        
+        .card:not(.flipped):hover {
+            transform: scale(1.05);
+        }
+        
+        function playVideo(card) {
+            // Evita que se escuche el clic en la tarjeta
+            card.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    
+        // Agrega la clase 'flipped'
+        card.classList.add('flipped');
+    
+        // Muestra la capa de video
+        const videoOverlay = card.querySelector('.video-overlay');
+        videoOverlay.style.display = 'block';
+        }
         </textarea>
 
+        <div class="text-container">
+            <p>Luego para una mejor interacción con el usuario se creó otra función de Javascript para que cuando el usuario toque fuera de las tarjetas que tenga activas estas vuelvan a su posición por defecto.
+                </p>
+        </div>
+        <textarea rows="20" cols="59" readonly>
+        document.addEventListener('click', function(event) {
+            const target = event.target;
+            if (!target.classList.contains('card') && !target.classList.contains('video-overlay')) {
+                // La tarjeta no fue presionada, así que vuelve a la normalidad
+                const flippedCards = document.querySelectorAll('.card.flipped');
+                for (const card of flippedCards) {
+                card.classList.remove('flipped');
+                card.querySelector('.video-overlay').style.display = 'none';
+                }
+            }
+            });
+        </textarea>
+        <div class="text-container">
+            <p>Para el botón de cambio de modo se definió que este debía seguir con la temática definida previamente, por esta razón se pensó en integrar a dos personajes de las películas de Studio Ghibli (Calcifer y Jiji) y que ambos representasen sus respectivos modos (Claro y Oscuro)
+                Para poder cambiar el fondo se definió una función de Javascript que al detectar un cambio en el checkbox (que es el botón) se cambie el color de fondo y la imagen de fondo, además de esto se añadió una transición para que el cambio no sea tan brusco.
+            </p>
+        </div>
+        <textarea  rows="10" cols="59" readonly>
+        const toggleCheckbox = document.querySelector('.toggle-checkbox');
+        const body = document.body;
+        const totn = document.getElementById('totn');
+        const header = document.querySelector('header h1'); // Selecciona el elemento h1 dentro del encabezado
+        
+        toggleCheckbox.addEventListener('change', function () {
+            if (toggleCheckbox.checked) {
+            // Cambiar a modo oscuro
+            body.style.backgroundColor = '#323578';
+            totn.style.opacity = 0; // Se agrega esta línea
+            header.style.color = 'white';
+            setTimeout(() => {
+                totn.style.opacity = 1; // Se agrega esta línea
+                totn.src = 'imgs/totoro-night.jpg'; // Cambiar la imagen a modo oscuro
+            }, 1000); // Se agrega esta línea
+            } else {
+            // Cambiar a modo claro
+            body.style.backgroundColor = '#91a5d2';
+            totn.style.opacity = 0; // Se agrega esta línea
+            header.style.color = 'white';
+            setTimeout(() => {
+                totn.style.opacity = 1; // Se agrega esta línea
+                totn.src = 'imgs/totoro-day.jpg'; // Cambiar la imagen a modo claro
+            }, 1000); // Se agrega esta línea
+            }
+        });
+        </textarea>
+        <textarea rows="30" cols="59" readonly>
+         
+        .toggle-checkbox {
+            display: none;
+        }
+        
+        .toggle-label {
+            cursor: pointer;
+            width: 100px;
+            height: 50px;
+            position: relative;
+            border-radius: 30px;
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s; /* Agregamos transición para background-color, box-shadow y transform */
+            background-color: #ff8800; /* Color de fondo del botón en modo claro */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombrado por defecto en modo claro */
+        }
+        
+        .toggle-label::before {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background-image: url('https://i.pinimg.com/originals/0d/e3/f6/0de3f6b0d942a693b001d3ffb7753872.png'); /* Imagen en modo claro */
+            background-size: cover;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            transition: transform 0.3s, background-image 0.3s;
+        }
+        
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #000000; /* Color de fondo del botón en modo oscuro */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombrado por defecto en modo oscuro */
+        }
+        
+        /* Cambios de sombra y tamaño en hover */
+        .toggle-label:hover {
+            box-shadow: 0 6px 10px rgb(229, 133, 29); /* Cambio de sombra en hover en modo claro */
+            transform: scale(1.1); /* Cambio de tamaño en hover */
+        }
+        
+        .toggle-checkbox:checked + .toggle-label:hover {
+            box-shadow: 0 6px 10px rgb(14, 28, 71); /* Cambio de sombra en hover en modo oscuro */
+            transform: scale(1.1); /* Cambio de tamaño en hover */
+        }
+        
+        .toggle-checkbox:checked + .toggle-label::before {
+            background-image: url('https://w0.peakpx.com/wallpaper/769/994/HD-wallpaper-jiji-anime-studio-ghibli-hayao-miyazaki-jiji-kikis-kikis-delivery-service.jpg'); /* Imagen en modo oscuro */
+            transform: translateX(50px); /* Desplazar el círculo al modo oscuro */
+        }
+            
+        </textarea>
     </div>
+    
+  
     <footer>
-        <p>© 2023 - 2023 | Todos los derechos reservados a Julieth Campos y Nicole Jara</p>
+        
         <h4> Información de contacto:</h4>
         <p><span>Julieth Campos Pérez</span> </p>
         <a href="mailto:juliethcp22@gmail.com?subject=Proyecto%1%WEB&bcc
@@ -87,16 +245,38 @@
         =copia_oculta@gmail.com&cc=copia@gmail.com&body=correo%20de%20prueba">
         <strong>Correo:</strong> nicolejara09@gmail.com</a>
         <a href="tel: +50684894736" > <strong>  |  Teléfono:</strong>(506) 84894736</a> 
+        
+        <p>© 2023 - 2023 | Todos los derechos reservados a Julieth Campos y Nicole Jara</p>
+        
     </footer>
           
 <script>
+
 function playVideo(card) {
-    const videoOverlay = card.querySelector('.video-overlay');
-    videoOverlay.style.display = 'block';
-    card.classList.add('flipped'); // Agrega la clase 'flipped'
-}
-
-
+      // Evita que se escuche el clic en la tarjeta
+      card.addEventListener('click', function(event) {
+        event.stopPropagation();
+      });
+    
+      // Agrega la clase 'flipped'
+      card.classList.add('flipped');
+    
+      // Muestra la capa de video
+      const videoOverlay = card.querySelector('.video-overlay');
+      videoOverlay.style.display = 'block';
+    }
+    
+    document.addEventListener('click', function(event) {
+      const target = event.target;
+      if (!target.classList.contains('card') && !target.classList.contains('video-overlay')) {
+        // La tarjeta no fue presionada, así que vuelve a la normalidad
+        const flippedCards = document.querySelectorAll('.card.flipped');
+        for (const card of flippedCards) {
+          card.classList.remove('flipped');
+          card.querySelector('.video-overlay').style.display = 'none';
+        }
+      }
+    });
 </script>
 </body>
 </html>
