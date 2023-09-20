@@ -197,25 +197,53 @@ const body = document.body;
 const totn = document.getElementById('totn');
 const header = document.querySelector('header h1'); // Selecciona el elemento h1 dentro del encabezado
 
-    toggleCheckbox.addEventListener('change', function () {
-        if (toggleCheckbox.checked) {
-            // Cambiar a modo oscuro
-            body.style.backgroundColor = '#323578';
-            totn.src = 'imgs/totoro-night.jpg'; // Cambiar la imagen a modo oscuro
-            header.style.color = 'white';
-        } else {
-            // Cambiar a modo claro
-            body.style.backgroundColor = '#91a5d2';
-            totn.src = 'imgs/totoro-day.jpg'; // Cambiar la imagen a modo claro
-            header.style.color = 'white';
-        }
-    });
+toggleCheckbox.addEventListener('change', function () {
+  if (toggleCheckbox.checked) {
+    // Cambiar a modo oscuro
+    body.style.backgroundColor = '#323578';
+    totn.style.opacity = 0; // Se agrega esta línea
+    header.style.color = 'white';
+    setTimeout(() => {
+      totn.style.opacity = 1; // Se agrega esta línea
+      totn.src = 'imgs/totoro-night.jpg'; // Cambiar la imagen a modo oscuro
+    }, 1000); // Se agrega esta línea
+  } else {
+    // Cambiar a modo claro
+    body.style.backgroundColor = '#91a5d2';
+    totn.style.opacity = 0; // Se agrega esta línea
+    header.style.color = 'white';
+    setTimeout(() => {
+      totn.style.opacity = 1; // Se agrega esta línea
+      totn.src = 'imgs/totoro-day.jpg'; // Cambiar la imagen a modo claro
+    }, 1000); // Se agrega esta línea
+  }
+});
 
 function playVideo(card) {
-    const videoOverlay = card.querySelector('.video-overlay');
-    videoOverlay.style.display = 'block';
-    card.classList.add('flipped'); // Agrega la clase 'flipped'
+  // Evita que se escuche el clic en la tarjeta
+  card.addEventListener('click', function(event) {
+    event.stopPropagation();
+  });
+
+  // Agrega la clase 'flipped'
+  card.classList.add('flipped');
+
+  // Muestra la capa de video
+  const videoOverlay = card.querySelector('.video-overlay');
+  videoOverlay.style.display = 'block';
 }
+
+document.addEventListener('click', function(event) {
+  const target = event.target;
+  if (!target.classList.contains('card') && !target.classList.contains('video-overlay')) {
+    // La tarjeta no fue presionada, así que vuelve a la normalidad
+    const flippedCards = document.querySelectorAll('.card.flipped');
+    for (const card of flippedCards) {
+      card.classList.remove('flipped');
+      card.querySelector('.video-overlay').style.display = 'none';
+    }
+  }
+});
 
 </script>
 </body>
