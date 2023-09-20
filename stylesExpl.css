@@ -15,7 +15,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1; /* Asegura que el encabezado esté por encima del contenido */
+    z-index: 100; /* Asegura que el encabezado esté por encima del contenido */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -98,6 +98,19 @@ textarea {
     
 }
 
+footer{
+    text-align: center;
+    width: 101.3%;
+    height: 250px; /* Aumenta la altura para dar más espacio al contenido del encabezado */
+    padding: 10px 0; /* Añade espacio vertical en el interior del encabezado */
+    background-color: aliceblue;
+    margin-left: -10px;
+    margin-right: -50px;
+    margin-bottom: -10px;
+    z-index: 1; /* Asegura que el encabezado esté por encima del contenido */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
 /* ////////////////////////////////////////////////////////////*/
 
 /* Estilos CSS para las tarjetas */
@@ -112,6 +125,7 @@ textarea {
     border-radius: 5px;
     transition: transform 0.2s;
     cursor: pointer;
+    
 }
 
 .card:not(.flipped):hover {
